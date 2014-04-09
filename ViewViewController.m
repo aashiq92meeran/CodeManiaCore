@@ -16,13 +16,14 @@
     M13Checkbox *customFrame1 ;
 }
 @property (nonatomic,strong) NSString * answer;
+
 @property (nonatomic,strong)NSNumber *ans1;
 
 @end
 
 @implementation ViewViewController
 
-@synthesize qn,complixity,caste,buttonsArray,rootOfPlist,celltext,itsToDoChecked,current,answer,sobj;
+@synthesize qn,complixity,caste,buttonsArray,rootOfPlist,celltext,itsToDoChecked,current,answer;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -188,16 +189,6 @@
 }
 -(void)saveChecklist
 {
-    
-}
-- (IBAction)Search:(id)sender {
-    
-//    qn=[buttonsArray objectAtIndex:indexPath.row];
-    
-    sobj= [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"cell"];
-    
-    [self presentViewController:sobj animated:NO completion:^void{}];
-
     
 }
 

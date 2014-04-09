@@ -39,7 +39,7 @@
 //    NSLog(@"%@  distanc=",sendingdistancelevalview);
 //    NSLog(@"!!!buttonarray2 %@",buttonsArray);
     
-    int x =50;
+    int x =0;
     int y=100;
     for (int i=0; i<buttonsArray.count; i++)
     {

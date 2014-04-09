@@ -15,6 +15,7 @@
 @property (nonatomic,copy)NSArray *keys;
 
 @property (nonatomic,copy)NSMutableArray *filterednames;
+
 @property (nonatomic,strong)UISearchDisplayController *searchcontroller;
 
 @end
@@ -37,6 +38,7 @@
     
 
     [super viewDidLoad];
+    
     UITableView *tableview=(id)[self.view viewWithTag:1];
     [tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     

@@ -29,7 +29,6 @@
 @property (nonatomic, retain) NSString *celltext;
 @property (nonatomic, retain) NSString *current;
 
-@property (nonatomic,strong) SearchViewController *sobj;
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableview;

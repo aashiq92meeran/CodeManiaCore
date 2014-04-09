@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 @interface ViewController ()
+
 {
  NSManagedObjectContext *context;
 }
@@ -27,7 +28,7 @@
     AppDelegate *appdelegate = [[UIApplication sharedApplication]delegate];
     context = [appdelegate managedObjectContext];
 
-    int x =50;
+    int x =0;
     int y=100;
     for (int i=0; i<buttonsArray.count; i++)
     {
@@ -45,6 +46,7 @@
     }
     
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -61,7 +63,7 @@
 {
     distance = button.currentTitle;
     NSLog(@"%@",distance);
-    NSLog(@"Button  clicked.");
+    NSLog(@"Button clicked.");
     
     
     _lobj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"LevelViewController"];

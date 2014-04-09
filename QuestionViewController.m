@@ -10,12 +10,21 @@
 #import "AppDelegate.h"
 @interface QuestionViewController ()<UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic,copy)NSDictionary *names;
+@property (nonatomic,copy)NSArray *keys;
+
+@property (nonatomic,copy)NSMutableArray *filterednames;
+
+
+@property (nonatomic,strong)UISearchDisplayController *searchcontroller;
+
 @end
 
 @implementation QuestionViewController
 
 
-@synthesize plistobj,buttonsArray,qn,levelObj;
+@synthesize plistobj,buttonsArray,qn,levelObj,sobj;
+@synthesize names,keys,filterednames,searchcontroller;
 
 
 //- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,6 +42,12 @@
     levelObj=[[LevelViewController alloc]init];
     
     buttonsArray=[plistobj AppPlistWeek:_qn1 :_qn2];
+    
+    UITableView *tableview=(id)[self.view viewWithTag:1];
+    [tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionViewController"];
+    
+    searchcontroller=[[UISearchDisplayController alloc]init];
+    searchcontroller.searchResultsDataSource=self;
 //    //
 //    NSLog(@"fgfddzg%@",[buttonsArray description]);
 //    
@@ -147,11 +162,31 @@
     
 }
 
+-(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView
+
+{
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"QuestionViewController"];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)Search:(id)sender {
+    
+    
+//    qn=[buttonsArray objectAtIndex:indexPath.row];
+  
+    sobj= [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"cell"];
+    
+    [self presentViewController:sobj animated:NO completion:^void{}];
+    
+    
+}
+
+
 - (IBAction)backButon:(id)sender {
     
     [self dismissViewControllerAnimated:NO completion:nil];

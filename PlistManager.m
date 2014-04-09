@@ -24,6 +24,7 @@
     
     
     fullData = [propertyDict allKeys];
+    
     NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"" ascending:YES selector:@selector(localizedStandardCompare:)];
     
     fullData = [fullData sortedArrayUsingDescriptors:@[descriptor]];
@@ -96,13 +97,14 @@
 
     NSLog(@"final%@",third);
 //     NSArray *weekDetails=[third copy];
+    
     NSString * fourth= [third objectAtIndex:2];
 
         return third;
     
     
 }
-//-(NSArray *)AppPlistWeekone:(NSString *)distance :(NSString *)complixity :(NSString *)weeks :(NSString *)question
+//-(NSArray *)AppPlistWeekone:(NSString *)distance :(NSString *)complixity :(NSString *)weeks :(NSSt=ing *)question
 //{
 //    plistPath = [[NSBundle mainBundle] pathForResource:@"Property List" ofType:@"plist"];
 //    NSMutableDictionary * propertyDict = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];

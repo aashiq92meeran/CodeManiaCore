@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PlistManager.h"
+#import "QuestionViewController.h"
 
 
 @interface SearchViewController : UIViewController
